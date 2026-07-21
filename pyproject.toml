@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "snapwonders"
+version = "0.1.1"
+description = "Official Python SDK for the snapWONDERS API — steganography (hide & reveal), forensic media analysis, and format conversion."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Kenneth Springer @ snapWONDERS", email = "kenneth@snapwonders.com" }]
+keywords = ["steganography", "hide-and-reveal", "forensics", "image-forensics", "media-analysis", "api-client", "mcp", "snapwonders", "vaultify", "c2pa", "content-credentials", "ai-image-detection", "image-conversion", "watermark-detection"]
+
+# Minimal runtime surface: httpx (BSD-3-Clause) only. TUS is hand-rolled on top of it, so there
+# is no tus-py-client dependency.
+dependencies = ["httpx>=0.27,<1.0"]
+
+[project.urls]
+Homepage = "https://snapwonders.com/developers#sdk"
+Documentation = "https://snapwonders.com/api"
+Repository = "https://github.com/snapWONDERS/snapWONDERS-SDK-Python"
+Issues = "https://github.com/snapWONDERS/snapWONDERS-SDK-Python/issues"
+Changelog = "https://github.com/snapWONDERS/snapWONDERS-SDK-Python/blob/main/CHANGELOG.md"
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/snapwonders"]
